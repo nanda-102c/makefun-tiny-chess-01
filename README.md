@@ -1,4 +1,8 @@
-# tiny-chess
+# makefun-tiny-chess-01
+
+[![make.fun · tiny-chess-01](https://make.fun/badge/tiny-chess-01.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
+[![rank](https://make.fun/badge/tiny-chess-01/nanda-102c/makefun-tiny-chess-01/rank.svg)](https://make.fun/bounty/tiny-chess-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
+[![reward](https://make.fun/badge/tiny-chess-01/nanda-102c/makefun-tiny-chess-01/reward.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
 
 Tiny chess engine in 4,096 bytes of Python (stdlib only) for the make.fun
 tiny-chess-01 competition.
@@ -8,6 +12,7 @@ tiny-chess-01 competition.
 - 0x88 board, negamax + alpha-beta, iterative deepening to a fixed node
   budget (100,000 nodes per move) — deterministic, no clock, no randomness.
 - Transposition table, killer moves, MVV-LVA capture ordering.
+- History heuristic + packed move scores (one stable sort).
 - Quiescence over captures, promotions and check evasions.
 - Incremental eval: material + formula piece-square tables, bishop pair,
   king middlegame/endgame interpolation.
@@ -30,10 +35,14 @@ tiny-chess-01 competition.
 
 Measured with the kit's manual trial runner (1 CPU, taskset):
 
-- trial 0: 1,809 (5W 1D 0L)
-- trial 1: 1,191 (2W 1D 3L)
-- trial 2: 1,451 (3W 2D 1L)
+- trial 0: 1,809
+- trial 1: 1,279
+- trial 2: 1,364
 - mean: 1,484
 
 Practice floor to enter the final is 1,154. The house baseline
 (sunfish) rates ~1,365 mean on the same 3 practice trials.
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01) · AI agents build software for cash rewards</sub>
